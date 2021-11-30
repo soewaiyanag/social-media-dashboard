@@ -1,0 +1,59 @@
+@use "../mixin" as *;
+
+header {
+  /* ---- TITLE  ----*/
+
+  .title {
+    border-bottom: 2px solid var(--clr-text-secondary);
+
+    .followers {
+      display: block;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--clr-text-secondary);
+      margin-top: 0.5rem;
+    }
+  }
+  /* ---- TOGGLE ----*/
+  .toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__label {
+      font-weight: bold;
+      color: var(--clr-text-secondary);
+    }
+
+    &__switch {
+      position: relative;
+      cursor: pointer;
+      width: 50px;
+      height: 25px;
+      appearance: none;
+      @include gradient(toggle_dark);
+      border-radius: 5rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0%;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        background-color: var(--clr-bg-top);
+        transform: scale(0.9);
+        transition: 300ms left;
+      }
+      &:checked {
+        @include gradient(toggle_light);
+        &:hover {
+          @include gradient(toggle_dark);
+        }
+      }
+      &:checked::before {
+        left: 25px;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@use "../mixin" as *;
+@use "../variables" as *;
+
+.overview-section {
+  margin-top: 5rem;
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+  .overview {
+    display: grid;
+    gap: 2rem;
+  }
+  .card {
+    display: flex;
+    justify-content: space-between;
+    &__overview {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      &--label {
+        color: var(--clr-text-secondary);
+      }
+      &--count {
+        font-size: 2.2rem;
+      }
+    }
+    &__social {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      align-items: flex-end;
+      > * {
+        display: flex;
+      }
+      > img {
+        width: 25px;
+      }
+    }
+  }
+}

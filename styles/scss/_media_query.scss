@@ -1,0 +1,40 @@
+@use "mixin" as *;
+
+// DEFAULT BREAKPOINT === $md
+
+@include media-breakpoint-down {
+  .title {
+    padding-bottom: 2rem;
+  }
+  .toggle {
+    padding-top: 2rem;
+  }
+}
+
+@include media-breakpoint-up {
+  header {
+    display: flex;
+    justify-content: space-between;
+    .title {
+      border-bottom: none;
+    }
+    .toggle {
+      width: 150px;
+    }
+  }
+  .container-followers {
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+  }
+  .overview {
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+  }
+}
+
+@include media-breakpoint-up($lg) {
+  .container-followers {
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+  }
+  .overview {
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+  }
+}

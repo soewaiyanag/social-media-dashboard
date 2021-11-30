@@ -1,0 +1,60 @@
+@use "../mixin" as *;
+@use "../variables" as *;
+
+.container-followers {
+  margin-top: 2rem;
+  display: grid;
+  gap: 2rem;
+  .card {
+    position: relative;
+
+    &:nth-child(1) {
+      &::before {
+        background: var(--clr-facebook);
+      }
+    }
+    &:nth-child(2) {
+      &::before {
+        background: var(--clr-twitter);
+      }
+    }
+    &:nth-child(3) {
+      &::before {
+        @include gradient(instagram);
+      }
+    }
+    &:nth-child(4) {
+      &::before {
+        background: var(--clr-youtube);
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 0.3rem;
+      width: 100%;
+      border-top-left-radius: 0.4rem;
+      border-top-right-radius: 0.4rem;
+    }
+    &__social {
+      margin-bottom: 1rem;
+      font-size: 1.025 rem;
+      font-weight: 700;
+      display: inline-flex;
+      color: var(--clr-text-secondary);
+
+      gap: 0.5rem;
+    }
+    &__followers {
+      font-size: 3.4rem;
+    }
+    &__text {
+      font-size: 0.925rem;
+      font-weight: 400;
+      letter-spacing: 0.5rem;
+      color: var(--clr-text-secondary);
+    }
+  }
+}
